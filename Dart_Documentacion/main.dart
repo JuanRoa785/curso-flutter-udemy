@@ -10,4 +10,7 @@ void main(){
 
   //Función auxiliar con la documentación de interpolación de cadenas
   interpolacion();
+  
+  //Función auxiliar con la documentación de variables inmutables
+  variables_inmutables();
 }

@@ -5,6 +5,8 @@ void interpolacion(){
   String apellido = "Roa";
   int edad = 25;
 
+  print("Ejemplo práctico de Interpolación de variables:");
+
   //Interpolación simple
   String saludo = "Hola, mi nombre es $nombre y tengo $edad años.";
   print(saludo); // Output: Hola, mi nombre es Juan y tengo 25 años.
@@ -27,6 +29,8 @@ void interpolacion(){
   String concatenacion = "Hola, " + nombre + ". Así que tienes " + edad.toString() + " años.";
   print(concatenacion); // Output: Hola, Juan. Tienes 25 años.
 
-  String iniciales = "Mis iniciales son: ${nombre[0]}. ${apellido[0]}.\n";
+  String iniciales = "Mis iniciales son: ${nombre[0]}. ${apellido[0]}.";
   print(iniciales); // Output: Mis iniciales son: J. R.
+
+  print("\n================================= #### =================================\n");
 }

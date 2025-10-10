@@ -27,6 +27,7 @@ void tipos_datos(){
   var numero_inferido = 20; // Dart infiere que es un int
 
   var tipo_dato = numero.runtimeType; // Obtener el tipo de dato de una variable
+  print("Ejemplos prácticos de tipos de datos:");
   print("El tipo de dato de la variable 'numero' es: $tipo_dato");  
   print("Así es el output al imprimir un string multilinea:\n$texto_multilinea");
 
@@ -39,11 +40,40 @@ void tipos_datos(){
   dynamic variable_dinamica = 100; // Dart no asume su tipo, solo sabe que es dynamic
   print("El tipo de dato de la variable 'variable_dinamica' es: ${variable_dinamica.runtimeType}");
   variable_dinamica = "Ahora soy un string"; // Cambiando el tipo de dato a String
-  print("Ahora, El tipo de dato de la variable 'variable_dinamica' es: ${variable_dinamica.runtimeType}\n");
+  print("Ahora, El tipo de dato de la variable 'variable_dinamica' es: ${variable_dinamica.runtimeType}");
 
   /*
     Tener en cuenta que esto es una mala práctica, no se recomienda usarla y puede llevar a
     errores en tiempo de ejecución ademas de que no se aprovechan las ventajas del tipado 
     estatico.
   */
+
+  print("\n================================= #### =================================\n");
+}
+
+void variables_inmutables(){
+  final String developer = "Juan Roa"; // No se puede cambiar su valor despues de asignarlo
+  //developer = "Otro nombre"; -> Esto genera un error de compilación
+  final variable_sin_tipo_definido = 123.75; // Dart (compilador) infiere que es un int
+
+  /*
+    Beneficios de usar variables inmutables:
+    - Seguridad: Evita cambios accidentales en el valor.
+    - Rendimiento: No se necesita reservar espacio adicional en memoria.
+  */
+
+  //Ejemplo Practico
+  var price = 18.0;
+  final coupon = 0.05;
+  price = price - (price * coupon);
+
+  final iva = 0.19;
+  final taxes = price * iva;
+  final total = price + taxes;
+
+  print("Ejemplo práctico de variables inmutables:");
+  print("El precio unitario es: $price");
+  print("El IVA es: $taxes");
+  print("El total a pagar es: $total");
+  print("\n================================= #### =================================\n");
 }
