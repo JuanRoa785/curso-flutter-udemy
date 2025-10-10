@@ -30,5 +30,20 @@ void tipos_datos(){
   print("El tipo de dato de la variable 'numero' es: $tipo_dato");  
   print("Así es el output al imprimir un string multilinea:\n$texto_multilinea");
 
-  //Tambien existen los tipos de datos dinámicos y las instancias de tipos:
+  //Datos Dinamicos
+  /*
+    Como en JavaScript, en Dart tambien podemos cambiar el tipo de dato de una variable durante 
+    el tiempo de ejecución, sin embargo, porque Dart es un lenguaje de tipado estatico, la unica
+    manera de hacer esto es utilizando los tipos de datos dinamicos: 'dynamic' o 'Object'.
+  */
+  dynamic variable_dinamica = 100; // Dart no asume su tipo, solo sabe que es dynamic
+  print("El tipo de dato de la variable 'variable_dinamica' es: ${variable_dinamica.runtimeType}");
+  variable_dinamica = "Ahora soy un string"; // Cambiando el tipo de dato a String
+  print("Ahora, El tipo de dato de la variable 'variable_dinamica' es: ${variable_dinamica.runtimeType}");
+
+  /*
+    Tener en cuenta que esto es una mala práctica, no se recomienda usarla y puede llevar a
+    errores en tiempo de ejecución ademas de que no se aprovechan las ventajas del tipado 
+    estatico.
+  */
 }
