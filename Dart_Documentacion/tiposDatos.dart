@@ -39,7 +39,7 @@ void tipos_datos(){
   dynamic variable_dinamica = 100; // Dart no asume su tipo, solo sabe que es dynamic
   print("El tipo de dato de la variable 'variable_dinamica' es: ${variable_dinamica.runtimeType}");
   variable_dinamica = "Ahora soy un string"; // Cambiando el tipo de dato a String
-  print("Ahora, El tipo de dato de la variable 'variable_dinamica' es: ${variable_dinamica.runtimeType}");
+  print("Ahora, El tipo de dato de la variable 'variable_dinamica' es: ${variable_dinamica.runtimeType}\n");
 
   /*
     Tener en cuenta que esto es una mala práctica, no se recomienda usarla y puede llevar a
