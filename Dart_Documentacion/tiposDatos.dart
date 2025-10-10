@@ -77,3 +77,36 @@ void variables_inmutables(){
   print("El total a pagar es: $total");
   print("\n================================= #### =================================\n");
 }
+
+void constantes() {
+  /*
+    Las variables inmutables se pueden asignar de antemano o durante el tiempo de ejecución,
+    como resultado de algun tipo de cálculo o función.
+
+    Sin embargo, si vamos a definir una variable cuyo valor es constante y conocido de antemano,
+    es mejor usar 'const' en lugar de 'final', pues habrá una mejora en el rendimiento del sistema
+    ya que la referencia a este dato ya estará guardado desde antes de que se ejecute la app.
+
+    Retomando el ejemplo de variables_inmutables(), si sabemos que el IVA es 0.19 y no va a cambiar nunca,
+    es mejor definirla como una constante:
+
+    const double iva = 0.19; // Definición de una constante
+
+    Ironicamente, el compilador de Dart puede reconocer cuando se van a hacer operaciones con constantes
+    permitiendo asignarle el resultado de la misma a otra variable constante:
+  */
+
+  const double iva = 0.19;
+  const double price = 18.0;
+  const double total_price = price * iva; // El compilador lo reconoce y permite la asignación
+
+  // o 
+
+  const String client = "Pepito Perez";
+  const String purchase_info = "El cliente $client debe pagar $total_price por su compra.";
+  //Donde se observa que NO es necesario que sean del mismo tipo de datos.
+
+  //Sin embargo al hacerlo con 'var' obtendremos un error de compilación:
+  var coupon = 0.05;
+  //const total_with_discount = price - (price * coupon); -> Error de compilación
+}
