@@ -34,8 +34,35 @@ void imprimirTotal(double precio, int cantidad){
   print("\n================================= #### =================================\n");
 }
 
+//--------------------------------------------- // --------------------------------------------- 
+
 //ARROW FUNCTIONS
 String getUserName(String firstName, String lastName) => '$firstName $lastName'; 
-// Print(getUserName('Juan', 'Roa')); -> Juan Roa
+// Print(getUserName('Juan', 'Roa')); -> Imprime: Juan Roa
 
 void printMessageArrow(String message) => print(message); //En los casos donde no retornamos nada
+
+//--------------------------------------------- // --------------------------------------------- 
+
+//CALLBACKS
+/*
+  Dart es un lenguaje orientado a objetos por lo que se puede hacer lo siguiente:
+  final fn = printMessage; //No da error
+  fn('Hola desde una variable que contiene una función'); //Permite llamar la función.
+
+  NOTA: Entonces en Dart incluso las funciones son objetos.
+*/
+
+//Ejemplo avanzado de callbacks
+//Callbacks son funciones que se pasan como parámetros a otras funciones
+
+void printCallback(String Function() callback){
+  print(callback());
+}
+
+void printCallbackWithParameters(String Function(String text) callback){
+  print(callback('Juan Roa'));
+  print("\n================================= #### =================================\n");
+}
+
+String getDay() => DateTime.now().toString(); 
