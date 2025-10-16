@@ -33,3 +33,9 @@ void imprimirTotal(double precio, int cantidad){
   print("El total a pagar es: \$$total dolares.");
   print("\n================================= #### =================================\n");
 }
+
+//ARROW FUNCTIONS
+String getUserName(String firstName, String lastName) => '$firstName $lastName'; 
+// Print(getUserName('Juan', 'Roa')); -> Juan Roa
+
+void printMessageArrow(String message) => print(message); //En los casos donde no retornamos nada
