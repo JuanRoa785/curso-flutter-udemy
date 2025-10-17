@@ -1,5 +1,6 @@
 import 'funciones.dart';
 import 'interpolacion.dart';
+import 'listas.dart';
 import 'tiposDatos.dart';
 
 void main() {
@@ -26,4 +27,7 @@ void main() {
   printCallbackWithParameters(
     (text) => 'El nombre del usuario es: $text'
   );  //También es válido pasar una función anónima con parámetros
+
+  //Listas
+  docsArrays();
 }
