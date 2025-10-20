@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 void documentacionOperadores(){
   //Fuente: https://dart.dev/language/operators
 
@@ -124,4 +126,49 @@ void documentacionOperadores(){
     //NOTA: Ambos funcionan con cualquier atributo o método de una clase.
     print(getPlayerName()?.length ?? 0); //Imprime la longitud del String retornado por getPlayerName() o 0 si es null
   */
+}
+
+void spreadOperatorDocs() {
+  //El spread operator (...) es sumamente util al trabajar con listas y mapas
+
+  //Ejemplo con listas
+  final list1  = [0, 1, 2, 3, 4, 5];
+  final list2 = <int>[];
+  list2.addAll(list1);
+  list2.addAll([6, 7, 8, 9]); //Esto funciona, pero es bastante largo.
+
+  final list3 = [...list1, 6, 7, 8, 9]; //Usando el spread operator es mucho mas sencillo
+  final list4 = [6, 7, ...list1, 8, 9 ]; //El orden importa
+
+  print(list2);
+  print(list4);
+
+  //Ejemplo con maps
+  final map1 = {
+    'name': 'Juan', 
+    'age': 21
+  };
+  final map2 = <String, Object>{};
+  map2.addAll(map1);
+  map2.addAll({'isAdmin': true});
+
+  final map3 = {...map1, 'isAdmin': true}; //Usando el spread operator
+
+  //Cabe resaltar que el orden importa:
+  final map4 = {'isAdmin': true, ...map1}; 
+  print(map2);
+  print(map4);
+
+  //SALIDAS:
+  /*
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    [6, 7, 0, 1, 2, 3, 4, 5, 8, 9]
+    {name: Juan, age: 21, isAdmin: true}
+    {isAdmin: true, name: Juan, age: 21}
+  */
+
+  //En casos especificos se podrían sobreescribir valores en el map, así que hay que tener cuidado
+  //con el orden en que se usan los spread operators.
+
+  //En casos donde la lista o mapa puede ser nulo, se puede usar el null-aware spread operator (...?)
 }
