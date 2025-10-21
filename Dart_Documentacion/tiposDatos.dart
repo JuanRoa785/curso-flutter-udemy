@@ -110,3 +110,40 @@ void constantes() {
   var coupon = 0.05;
   //const total_with_discount = price - (price * coupon); -> Error de compilación
 }
+
+enum UserType {admin, client, guest,}
+
+void enumsDocs() {
+  //Enumerated types (Enums)
+  final userType = UserType.admin;
+  switch (userType) {
+    case UserType.admin:
+      print('User is an ${UserType.admin.name}');
+    case UserType.guest:
+      print('User is a ${UserType.guest.name}');
+    case UserType.client:
+      print('User is a ${userType.name}');
+  }
+
+  print('El indice del enum UserType.client es: ${UserType.client.index}'); // Output: 1
+}
+
+enum MediaType { 
+  image(101, '.jpg'), 
+  audio(110, '.mp3'), 
+  video(200, '.mp4');
+
+  const MediaType(this.id, this.ext);
+
+  final int id;
+  final String ext;
+}
+
+// int getTypeId(MediaType type) {
+  // return switch (type) {
+  //   MediaType.image => 101, 
+  //   MediaType.audio => 110,
+  //   MediaType.video => 200,
+  // };
+// //Como los valores son constantes se puede manejar directamente en el enum
+// }
